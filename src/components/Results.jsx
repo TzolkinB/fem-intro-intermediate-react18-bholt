@@ -1,4 +1,4 @@
-import Pet from "./Pet"
+import Pet from "./Pet";
 
 const Results = ({ pets }) => {
   return (
@@ -6,7 +6,7 @@ const Results = ({ pets }) => {
       {!pets.length ? (
         <h1>No Pets Found</h1>
       ) : (
-        pets.map(pet => {
+        pets.map((pet) => {
           return (
             <Pet
               animal={pet.animal}
@@ -16,12 +16,12 @@ const Results = ({ pets }) => {
               images={pet.images}
               location={`${pet.city}, ${pet.state}`}
               id={pet.id}
-              />
-          )
+            />
+          );
         })
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Results
+export default Results;

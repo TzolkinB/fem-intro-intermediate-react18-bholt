@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import AdoptedPetContext from "../AdoptedPetContext";
 import Results from "./Results";
-import useBreedList from "./useBreedList";
+import useBreedList from "../useBreedList";
 // import fetchSearch from "./fetchSearch";
 /* 
   from FEM video "Uncontrolled Forms"
@@ -16,6 +17,7 @@ const SearchParams = () => {
   const [breed, setBreed] = useState("");
   const [pets, setPets] = useState([]);
   const [breeds] = useBreedList(animal);
+  const [adoptedPet] = useContext(AdoptedPetContext);
 
   useEffect(() => {
     requestPets();
@@ -40,6 +42,11 @@ const SearchParams = () => {
           requestPets();
         }}
       >
+        {adoptedPet ? (
+          <div className="pet image-container">
+            <img src={adoptedPet.images[0]} alt={adoptedPet.name} />
+          </div>
+        ) : null}
         <label htmlFor="location">
           Location
           <input
@@ -49,7 +56,6 @@ const SearchParams = () => {
             placeholder="Location"
           />
         </label>
-
         <label htmlFor="animal">
           Animal
           <select
@@ -68,7 +74,6 @@ const SearchParams = () => {
             ))}
           </select>
         </label>
-
         <label htmlFor="breed">
           Breed
           <select
@@ -87,7 +92,6 @@ const SearchParams = () => {
             ))}
           </select>
         </label>
-
         <button>Submit</button>
       </form>
       <Results pets={pets} />;
