@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Results from "./Results";
-import useBreedList from "./useBreedList";
+import useBreedList from "../useBreedList";
 // import fetchSearch from "./fetchSearch";
 /* 
   from FEM video "Uncontrolled Forms"
