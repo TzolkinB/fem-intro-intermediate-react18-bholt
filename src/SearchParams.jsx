@@ -5,6 +5,7 @@ import useBreedList from "./useBreedList";
 /* 
   from FEM video "Uncontrolled Forms"
   https://frontendmasters.com/courses/complete-react-v8/uncontrolled-forms/
+  https://react-v8.holt.courses/lessons/react-capabilities/uncontrolled-forms
   refactors useEffect w/ fetchSearch (func using react-query plugin)
 */
 const animals = ["bird", "cat", "dog", "rabbit", "reptile"];
