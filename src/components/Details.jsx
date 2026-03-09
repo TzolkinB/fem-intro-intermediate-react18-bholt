@@ -14,7 +14,7 @@ const Details = () => {
   const [_, setAdoptedPet] = useContext(AdoptedPetContext);
   // id is coming from the url: /details/:id
   const { id } = useParams();
-  const results = useQuery(["details", id], fetchPet);
+  const results = useQuery({ queryKey: ["details", id], queryFn: fetchPet });
 
   if (results.isLoading) {
     return (
